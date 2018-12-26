@@ -4,10 +4,10 @@ import numpy as np
 
 from my_util import *
 
-datafile_path = "expert_data/Hopper-v2.pkl"
-env_name = "Hopper-v2"
+datafile_path = "expert_data/Walker2d-v2.pkl"
+env_name = "Walker2d-v2"
 batch_size = 100
-total_iter = 100000
+total_iter = 300000
 
 # load training data
 f = open(datafile_path, 'rb')
@@ -31,7 +31,7 @@ sess.run(tf.global_variables_initializer())
 saver = tf.train.Saver()
 
 # run training
-for step in range(total_iter):
+for step in range(total_iter+1):
     indices = np.random.randint(low=0, high=len(expert_data['actions']), size=batch_size)
     input_batch = expert_data['observations'][indices]
     output_batch = expert_data['actions'][indices]
