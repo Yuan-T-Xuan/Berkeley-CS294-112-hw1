@@ -4,10 +4,17 @@ import numpy as np
 
 datafile_path = "expert_data/Hopper-v2.pkl"
 env_name = "Hopper-v2"
-input_dim = 111
-output_dim = 8
 batch_size = 100
 total_iter = 100000
+
+# load training data
+f = open(datafile_path, 'rb')
+expert_data = pickle.load(f)
+f.close()
+expert_data['actions'] = expert_data['actions'].reshape((expert_data['actions'].shape[0], -1))
+
+input_dim = expert_data['observations'].shape[1]
+output_dim = expert_data['actions'].shape[1]
 
 sess = tf.Session()
 
@@ -42,12 +49,6 @@ input_ph, output_ph, output_pred = create_model()
 # define loss
 loss = tf.losses.mean_squared_error(output_ph, output_pred)
 opt = tf.train.AdamOptimizer().minimize(loss)
-
-# load training data
-f = open(datafile_path, 'rb')
-expert_data = pickle.load(f)
-f.close()
-expert_data['actions'] = expert_data['actions'].reshape((expert_data['actions'].shape[0], -1))
 
 # initialize variables and prepare for training
 sess.run(tf.global_variables_initializer())
