@@ -4,12 +4,12 @@ import gym
 
 from my_util import *
 
-trained_model_path = "/Users/xuan/Documents/DeepRL/Berkeley-CS294-112-hw1/selected_models/Humanoid-v2-300000.ckpt"
+trained_model_path = "/Users/xuan/Documents/DeepRL/Berkeley-CS294-112-hw1/selected_models/Hopper-v2-100000.ckpt"
 num_rollouts = 10
 max_timesteps = 1000
-envname = "Humanoid-v2"
-input_dim = 376
-output_dim = 17
+envname = "Hopper-v2"
+input_dim = 11
+output_dim = 3
 
 input_ph, _, output_pred = create_model(input_dim, output_dim)
 

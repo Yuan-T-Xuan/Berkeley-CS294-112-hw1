@@ -4,10 +4,10 @@ import numpy as np
 
 from my_util import *
 
-datafile_path = "expert_data/Humanoid-v2.pkl"
-env_name = "Humanoid-v2"
+datafile_path = "expert_data/Hopper-v2.pkl"
+env_name = "Hopper-v2"
 batch_size = 100
-total_iter = 300000
+total_iter = 100000
 
 # load training data
 f = open(datafile_path, 'rb')
