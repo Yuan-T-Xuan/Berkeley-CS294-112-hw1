@@ -4,8 +4,8 @@ import numpy as np
 
 from my_util import *
 
-datafile_path = "expert_data/Walker2d-v2.pkl"
-env_name = "Walker2d-v2"
+datafile_path = "expert_data/HalfCheetah-v2.pkl"
+env_name = "HalfCheetah-v2"
 batch_size = 100
 total_iter = 300000
 
