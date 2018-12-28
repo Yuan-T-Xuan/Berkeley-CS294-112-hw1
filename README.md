@@ -4,6 +4,13 @@
 2. Run `python3 train.py` to train your model. Change `env_name` and `datafile_path` if needed.
 3. Run `python3 run_trained.py` to run the trained model. Change `trained_model_path` and `envname` if needed. If env is changed, change `input_dim` and `output_dim` accordingly.
 
+### DAgger
+0. An initial model is required to run DAgger, which can be trained using `train.py`.
+1. Run `python3 dagger.py`. Change `init_model_path`, `envname`, `init_expert_data_path`, and `expert_policy_path` if needed. If env is changed, change `input_dim` and `output_dim` accordingly.
+2. Sit back and watch the robot 'dance'.
+
+### Experiment Result (i.e. Unformatted Report)
+[Google Doc](https://docs.google.com/document/d/1dl9_77OlKtTR0dqnZpc-hp_D9eYFlzuidqD1v7uD4fE/edit?usp=sharing)
 
 # (Original README) CS294-112 HW 1: Imitation Learning
 
