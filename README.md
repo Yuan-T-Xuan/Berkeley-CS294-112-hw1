@@ -1,4 +1,11 @@
-# CS294-112 HW 1: Imitation Learning
+# How-to
+### Behavioral Cloning
+1. Run `bash demo.bash` to generate expert data, you may want to change `num_rollouts`.
+2. Run `python3 train.py` to train your model. Change `env_name` and `datafile_path` if needed.
+3. Run `python3 run_trained.py` to run the trained model. Change `trained_model_path` and `envname` if needed. If env is changed, change `input_dim` and `output_dim` accordingly.
+
+
+# (Original README) CS294-112 HW 1: Imitation Learning
 
 Dependencies:
  * Python **3.5**
